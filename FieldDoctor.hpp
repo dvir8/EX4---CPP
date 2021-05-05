@@ -7,9 +7,9 @@ using namespace pandemic;
 class FieldDoctor: public Player{
 
     public:
-
-        FieldDoctor(Board board, enum City a);
         Player& treat(enum City a);
         string role();
+        FieldDoctor(Board board, enum City a);
+        
 
 };

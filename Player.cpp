@@ -5,23 +5,6 @@
 using namespace pandemic;
 const int MAX_CARDS =48;
 
-Player& Player::drive (enum City a){
-    
-
-    for (size_t i = 0; i < 6; i++)
-    {   
-        if(theBorad.theMap2.at(CurrentCity).currenyCity[i]==a){
-            break;
-        }
-        if(i==5){
-            
-            throw invalid_argument("City is not connected");
-        }
-    }
-    
-    CurrentCity = a;
-    return *this;
-}
 Player& Player::fly_direct(enum City a){
     if(Cards[(int)a] == false){
         throw invalid_argument("you dont own the card");
@@ -97,6 +80,23 @@ Player& Player::discover_cure(enum Color a){
     }
     
     
+    return *this;
+}
+Player& Player::drive (enum City a){
+    
+
+    for (size_t i = 0; i < 6; i++)
+    {   
+        if(theBorad.theMap2.at(CurrentCity).currenyCity[i]==a){
+            break;
+        }
+        if(i==5){
+            
+            throw invalid_argument("City is not connected");
+        }
+    }
+    
+    CurrentCity = a;
     return *this;
 }
 

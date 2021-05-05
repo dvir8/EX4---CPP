@@ -7,9 +7,8 @@ using namespace pandemic;
 class GeneSplicer: public Player{
 
     public:
-
-        GeneSplicer(Board board, enum City);
         Player& discover_cure();
+        GeneSplicer(Board board, enum City);
         string role();
 
 };
